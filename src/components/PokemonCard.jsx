@@ -1,4 +1,3 @@
-import React, { useEffect, useState } from "react";
 import PropTypes from "prop-types";
 
 const PokemonCard = ({ pokemonList }) => {
@@ -8,27 +7,6 @@ const PokemonCard = ({ pokemonList }) => {
       imgSrc: PropTypes.string.isRequired,
     }).isRequired,
   };
-
-  useEffect(() => {
-    alert("hello pokemon trainer :");
-  },[]);
-  
-  // UseState pour indexer pokemonList
-  const [pokemonIndex, setPokemonIndex] = useState(0);
-  // Bouton suivant
-  const handleNext = () => {
-      pokemonIndex < pokemonList.length - 1
-      ? setPokemonIndex(pokemonIndex + 1)
-      : false;
-    };
-    // Bouton Précédent
-    const handlePrevious = () => {
-        pokemonIndex > 0 ? setPokemonIndex(pokemonIndex - 1) : false;
-    };
-    
-    useEffect(() => {
-      pokemonIndex === 3 ? alert("pika pikachu !!!") : null;
-    }, [pokemonIndex]);
 
     return (
         <div>
@@ -41,8 +19,6 @@ const PokemonCard = ({ pokemonList }) => {
           alt={pokemonList[pokemonIndex].name}
         />
       </figure>
-      <button onClick={() => handlePrevious()}>précédent</button>
-      <button onClick={() => handleNext()}>suivant</button>
     </div>
   );
 };
