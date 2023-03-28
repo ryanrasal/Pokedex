@@ -16,7 +16,7 @@ function App() {
   return (
     <div>
       <MyTitle />
-      <PokemonCard pokemonList={pokemonList} />
+      <PokemonCard pokemonList={pokemonList} />;
     </div>
   );
 }
