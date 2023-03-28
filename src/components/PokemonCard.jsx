@@ -12,16 +12,20 @@ const PokemonCard = () => {
     },
   ];
 
-  const [pokemon, setPokemon] = useState(pokemonList[1]);
+  const [pokemon, setPokemon] = useState(pokemonList[0]);
 
   return (
     <div>
-      <p>{pokemon.name}</p>
-      {pokemon.imgSrc ? (
-        <img src={pokemon.imgSrc} alt={pokemon.name} />
-      ) : (
-        <p>???</p>
-      )}
+      <figure>
+        <figcaption>
+          <p>{pokemon.name}</p>
+        </figcaption>
+        {pokemon.imgSrc ? (
+          <img src={pokemon.imgSrc} alt={pokemon.name} />
+        ) : (
+          <p>???</p>
+        )}
+      </figure>
     </div>
   );
 };
