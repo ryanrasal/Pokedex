@@ -1,6 +1,6 @@
 import PropTypes from "prop-types";
 
-const PokemonCard = ({ pokemonList }) => {
+const PokemonCard = ({ pokemonList, pokemonIndex }) => {
   PokemonCard.propTypes = {
     pokemonList: PropTypes.shape({
       name: PropTypes.string.isRequired,
@@ -8,8 +8,8 @@ const PokemonCard = ({ pokemonList }) => {
     }).isRequired,
   };
 
-    return (
-        <div>
+  return (
+    <div>
       <figure>
         <figcaption>
           <p>{pokemonList[pokemonIndex].name}</p>

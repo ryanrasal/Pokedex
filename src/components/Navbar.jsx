@@ -1,10 +1,11 @@
 import React from "react";
 
-const Navbar = ({ handlePrevious, handleNext }) => {
+const Navbar = ({ pokemonList, handlePokemon }) => {
   return (
     <div>
-      <button onClick={() => handlePrevious()}>précédent</button>
-      <button onClick={() => handleNext()}>suivant</button>
+      {pokemonList.map((pokemon, index) => 
+				<button onClick={() => handlePokemon(pokemon.name)} key={index}>{pokemon.name}</button>
+			)}
     </div>
   );
 };
